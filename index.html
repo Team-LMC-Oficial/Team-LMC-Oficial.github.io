@@ -626,18 +626,18 @@ footer .legal{font-size:.85rem;opacity:.85}
 .hero-bg{display:none}
 .hero{display:flex;flex-direction:column}
 .hero-banner{width:100%;max-width:1200px;margin:0 auto;padding:28px 24px 0;position:relative;z-index:1}
-.hero-banner img{display:block;width:100%;height:clamp(150px,27vw,310px);object-fit:cover;object-position:center;border-radius:14px;border:1px solid var(--line);animation:bnrin .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-banner>img{display:block;width:100%;height:clamp(150px,27vw,310px);object-fit:cover;object-position:center;border-radius:14px;border:1px solid var(--line);animation:bnrin .9s cubic-bezier(.2,.7,.2,1) both}
 @keyframes bnrin{from{opacity:0;transform:translateY(-14px) scale(.98)}to{opacity:1;transform:none}}
 .hero .wrap{min-height:auto;padding-top:48px}
-@media(max-width:560px){.hero-banner{padding:18px 18px 0}.hero-banner img{border-radius:10px}}
-@media(prefers-reduced-motion:reduce){.hero-banner img{animation:none}}
+@media(max-width:560px){.hero-banner{padding:18px 18px 0}.hero-banner>img{border-radius:10px}}
+@media(prefers-reduced-motion:reduce){.hero-banner>img{animation:none}}
 
 /* Banner de YouTube: franja ancha igual que se ve en el canal */
-.hero-banner img{height:auto;aspect-ratio:2560/423;min-height:84px;object-fit:cover;object-position:center;border-radius:12px}
-@media(max-width:560px){.hero-banner img{border-radius:8px}}
+.hero-banner>img{height:auto;aspect-ratio:2560/423;min-height:84px;object-fit:cover;object-position:center;border-radius:12px}
+@media(max-width:560px){.hero-banner>img{border-radius:8px}}
 
 /* ===== Banner de miembros (inicio) ===== */
-.hero-banner img{display:none}
+.hero-banner>img{display:none}
 .hm{padding:18px 22px 16px;border:1px solid var(--line);border-radius:14px;background:var(--glass);animation:bnrin .9s cubic-bezier(.2,.7,.2,1) both}
 .hm-head{display:flex;align-items:baseline;gap:14px;margin-bottom:12px;flex-wrap:wrap}
 .hm-head h2{font-size:1.5rem;font-weight:800;padding:0}
@@ -662,7 +662,7 @@ footer .legal{font-size:.85rem;opacity:.85}
 
 /* Fix: fotos de miembros siempre circulares */
 .hm-av{display:block;flex:none;width:62px;height:62px;min-width:62px;min-height:62px;aspect-ratio:1/1;padding:0;overflow:hidden}
-.hm-av img{position:absolute;inset:2px;width:calc(100% - 4px);height:calc(100% - 4px);max-width:none;border-radius:50%;object-fit:cover;object-position:center;border:2px solid var(--k)}
+.hm-av img{min-height:0;aspect-ratio:auto;animation:none;position:absolute;inset:2px;width:calc(100% - 4px);height:calc(100% - 4px);max-width:none;border-radius:50%;object-fit:cover;object-position:center;border:2px solid var(--k)}
 .hm-i b{margin-top:2px;line-height:1.2;flex:none}
 .hm-i{align-self:flex-start}
 .hm-list{align-items:flex-start;padding-top:14px}
