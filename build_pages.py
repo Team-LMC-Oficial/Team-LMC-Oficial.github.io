@@ -15,7 +15,14 @@ e = lambda v: html.escape(v, quote=True)
 def page(n):
     d = DD[n]; url = SITE + ('/' if n == 'inicio' else '/%s/' % n)
     h = src
+    og = SITE + '/assets/og/%s.png?v=3' % n
+    alt = 'Team LMC · ' + (d['n'].title() if n != 'inicio' else 'Semi esports')
     subs = [
+      (r'(<meta property="og:image" content=").*?(">)', r'\g<1>%s\g<2>' % og),
+      (r'(<meta property="og:image:secure_url" content=").*?(">)', r'\g<1>%s\g<2>' % og),
+      (r'(<meta name="twitter:image" content=").*?(">)', r'\g<1>%s\g<2>' % og),
+      (r'(<meta property="og:image:alt" content=").*?(">)', r'\g<1>%s\g<2>' % e(alt)),
+      (r'(<meta name="twitter:image:alt" content=").*?(">)', r'\g<1>%s\g<2>' % e(alt)),
       (r'<title>.*?</title>', '<title>%s</title>' % e(d['t'])),
       (r'(<meta name="description" content=").*?(">)', r'\g<1>%s\g<2>' % e(d['d'])),
       (r'(<link rel="canonical" href=").*?(">)', r'\g<1>%s\g<2>' % url),
