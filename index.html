@@ -673,7 +673,7 @@ footer .legal{font-size:.85rem;opacity:.85}
 </style>
 </head>
 <body id="top">
-<div id="intro" role="dialog" aria-label="Bienvenida a Team LMC"><div class="in-box"><img src="assets/avatars/teamlmc.png" alt="Logo de Team LMC"><h1>Team LMC</h1><p class="in-tag">Creado por creadores para creadores de contenido</p><button type="button" class="in-btn" id="inGo">Click para conocernos<i class="fa-solid fa-arrow-right"></i></button></div></div>
+<div id="intro" role="dialog" aria-label="Bienvenida a Team LMC"><div class="in-box"><img src="assets/avatars/teamlmc.png" alt="Logo de Team LMC"><h1 class="vh">Team LMC</h1><p class="in-tag">Creado por creadores para creadores de contenido</p><button type="button" class="in-btn" id="inGo">Click para conocernos<i class="fa-solid fa-arrow-right"></i></button></div></div>
 <script>(function(){var h=document.documentElement,i=document.getElementById('intro'),seen=null;try{seen=sessionStorage.getItem('lmc-intro')}catch(e){}if(seen){i.remove()}else{h.classList.add('lock')}
 if(!seen)i.addEventListener('click',function(){try{sessionStorage.setItem('lmc-intro','1')}catch(e){}i.classList.add('go');h.classList.remove('lock');dispatchEvent(new Event('introclick'));setTimeout(function(){i.remove();dispatchEvent(new Event('introdone'))},800)})})()</script>
 <div id="sweep" aria-hidden="true"></div>
