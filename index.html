@@ -1054,7 +1054,8 @@ mb.onclick=()=>{if(vol===0){vol=.22;muted=false}else muted=!muted;ap();if(au.pau
 vl.oninput=()=>{vol=vl.value/100;if(vol>0)muted=false;ap();if(au.paused)go()};
 const TR=[{t:'Die For You',a:'VALORANT, Grabbitz',src:'assets/teamlmc.mp3',cv:'assets/die.png',sp:'https://open.spotify.com/intl-es/track/02d1zKTPC4F7x9bCJOxhm3?si=a2361c16ad2b41e5'},
 {t:'Finale',a:'Toby Fox',src:'assets/finale.mp3',cv:'assets/finale.png'},
-{t:"Can't Slow Me Down",a:'VALORANT, Mirani, lIlBOI, GroovyRoom',src:'assets/cant.mp3',cv:'assets/cant.png'}];
+{t:"Can't Slow Me Down",a:'VALORANT, Mirani, lIlBOI, GroovyRoom',src:'assets/cant.mp3',cv:'assets/cant.png'},
+{t:'Face to Face',a:'Daft Punk',src:'assets/face.mp3',cv:'assets/face.png'}];
 let ti=0,errs=0;const cv=$('#mpCv'),sp=$('#mpSp');
 function load(i,play){ti=(i+TR.length)%TR.length;const k=TR[ti];au.src=k.src;cv.src=k.cv;cv.alt='Portada de '+k.t;$('#mpT').textContent=k.t;$('#mpA').textContent=k.a;
 if(k.sp){sp.href=k.sp;sp.hidden=false}else sp.hidden=true;mp.setAttribute('aria-label','Reproductor de m\u00FAsica: '+k.t);if(play)go()}
