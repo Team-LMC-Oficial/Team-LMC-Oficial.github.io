@@ -666,6 +666,10 @@ footer .legal{font-size:.85rem;opacity:.85}
 .hm-i b{margin-top:2px;line-height:1.2;flex:none}
 .hm-i{align-self:flex-start}
 .hm-list{align-items:flex-start;padding-top:14px}
+
+/* Shorts en el reproductor del inicio: mismo tamano que el preview, con zoom para llenar el cuadro */
+.vp-box{overflow:hidden}
+.vp-stage:not(.wide) .vp-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0;transform:scale(var(--vz,1.16));transform-origin:center center;background:#000}
 </style>
 </head>
 <body id="top">
