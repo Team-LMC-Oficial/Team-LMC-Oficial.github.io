@@ -659,12 +659,19 @@ footer .legal{font-size:.85rem;opacity:.85}
 .mc.hl{border-color:var(--red)!important;box-shadow:0 0 0 2px var(--red),0 0 34px rgba(224,30,43,.45);animation:hlp .9s ease 3}
 @keyframes hlp{50%{transform:scale(1.035)}}
 @media(prefers-reduced-motion:reduce){.mc.hl{animation:none}}
+
+/* Fix: fotos de miembros siempre circulares */
+.hm-av{display:block;flex:none;width:62px;height:62px;min-width:62px;min-height:62px;aspect-ratio:1/1;padding:0;overflow:hidden}
+.hm-av img{position:absolute;inset:2px;width:calc(100% - 4px);height:calc(100% - 4px);max-width:none;border-radius:50%;object-fit:cover;object-position:center;border:2px solid var(--k)}
+.hm-i b{margin-top:2px;line-height:1.2;flex:none}
+.hm-i{align-self:flex-start}
+.hm-list{align-items:flex-start;padding-top:14px}
 </style>
 </head>
 <body id="top">
 <div id="intro" role="dialog" aria-label="Bienvenida a Team LMC"><div class="in-box"><img src="assets/avatars/teamlmc.png" alt="Logo de Team LMC"><h1>Team LMC</h1><p class="in-tag">Creado por creadores para creadores de contenido</p><button type="button" class="in-btn" id="inGo">Click para conocernos<i class="fa-solid fa-arrow-right"></i></button></div></div>
 <script>(function(){var h=document.documentElement,i=document.getElementById('intro'),seen=null;try{seen=sessionStorage.getItem('lmc-intro')}catch(e){}if(seen){i.remove()}else{h.classList.add('lock')}
-if(!seen)i.addEventListener('click',function(){try{sessionStorage.setItem('lmc-intro','1')}catch(e){}i.classList.add('go');h.classList.remove('lock');setTimeout(function(){i.remove();dispatchEvent(new Event('introdone'))},800)})})()</script>
+if(!seen)i.addEventListener('click',function(){try{sessionStorage.setItem('lmc-intro','1')}catch(e){}i.classList.add('go');h.classList.remove('lock');dispatchEvent(new Event('introclick'));setTimeout(function(){i.remove();dispatchEvent(new Event('introdone'))},800)})})()</script>
 <div id="sweep" aria-hidden="true"></div>
 <div id="tx" aria-hidden="true"><img src="assets/avatars/teamlmc.png" alt=""><b id="txl"></b></div>
 <header><div class="wrap">
@@ -711,7 +718,7 @@ if(!seen)i.addEventListener('click',function(){try{sessionStorage.setItem('lmc-i
 <p>Nacimos de creadores de contenido para creadores de contenido: un espacio donde cada integrante aporta su estilo, su audiencia y su criterio para que todos avancemos más rápido.</p>
 <p>Para nosotros, crecer juntos es una oportunidad para crecer, con respeto, unión y compromiso.</p></div>
 <aside class="org rv" style="--d:.15s"><h3>Dirección</h3><ul>
-<li><strong>Zansumi</strong><span>Founder</span></li><li><strong>TheAndreusPR</strong><span>Admin</span></li><li><strong>IwanMC</strong><span>Co Owner</span></li><li><strong>zFrixz</strong><span>Co Owner</span></li></ul></aside>
+<li><strong>Zansumi</strong><span>Founder</span></li><li><strong>IwanMC</strong><span>Co Owner</span></li><li><strong>zFrixz</strong><span>Co Owner</span></li><li><strong>TheAndreusPR</strong><span>Admin</span></li></ul></aside>
 </div></section>
 <section class="alt"><div class="wrap">
 <div class="sh rv"><h2>Qué hacemos</h2></div>
@@ -730,31 +737,31 @@ if(!seen)i.addEventListener('click',function(){try{sessionStorage.setItem('lmc-i
 <span class="av"><img src="assets/avatars/zansumi.png" alt="Zansumi"></span><h3>Zansumi</h3><span class="tag hi">Founder</span>
 <p>Fundador principal de TEAM LMC y creador de contenido.</p>
 <span class="go"><i class="fab fa-youtube"></i>YouTube</span></a>
-<a class="mc rv" style="--d:.05s" href="https://kick.com/theandreuspr" target="_blank" rel="noopener">
-<span class="av"><img src="assets/avatars/andreus.png" alt="TheAndreusPR"></span><h3>TheAndreusPR</h3><span class="tag hi">Admin</span>
-<p>Admin de TEAM LMC y creador de contenido.</p>
-<span class="go"><i class="fa-solid fa-play"></i>Kick</span></a>
-<a class="mc rv" style="--d:.1s" href="https://www.twitch.tv/iwanmc" target="_blank" rel="noopener">
+<a class="mc rv" style="--d:0.05s" href="https://www.twitch.tv/iwanmc" target="_blank" rel="noopener">
 <span class="av"><img src="assets/avatars/iwan.png" alt="IwanMC"></span><h3>IwanMC</h3><span class="tag hi">Co Owner</span>
 <p>Co owner y streamer oficial de TEAM LMC.</p>
 <span class="go"><i class="fab fa-twitch"></i>Twitch</span></a>
-<a class="mc rv" href="https://kick.com/Spritii" target="_blank" rel="noopener">
-<span class="av"><img src="assets/avatars/spritii.png" alt="Spritii"></span><h3>Spritii</h3><span class="tag">Creador de contenido</span>
-<p>Streamer y creador de contenido dentro de TEAM LMC.</p>
-<span class="go"><i class="fa-solid fa-play"></i>Kick</span></a>
-<a class="mc rv" style="--d:.1s" href="https://www.youtube.com/@OshaX64" target="_blank" rel="noopener">
-<span class="av"><img src="assets/avatars/osha.png" alt="Oshawott0M"></span><h3>Oshawott0M</h3><span class="tag">Jugador casual</span>
-<p>Jugador casual y miembro oficial de TEAM LMC.</p>
-<span class="go"><i class="fab fa-youtube"></i>YouTube</span></a>
-<a class="mc rv" href="https://www.youtube.com/@zFRIXZ" target="_blank" rel="noopener">
+<a class="mc rv" style="--d:0.1s" href="https://www.youtube.com/@zFRIXZ" target="_blank" rel="noopener">
 <span class="av"><img src="assets/avatars/zfrixz.png" alt="zFrixz"></span><h3>zFrixz</h3><span class="tag hi">Co Owner</span>
 <p>Co owner y creador de contenido de TEAM LMC.</p>
 <span class="go"><i class="fab fa-youtube"></i>YouTube</span></a>
-<a class="mc rv" style="--d:.05s" href="https://kick.com/daantix" target="_blank" rel="noopener">
+<a class="mc rv" href="https://kick.com/theandreuspr" target="_blank" rel="noopener">
+<span class="av"><img src="assets/avatars/andreus.png" alt="TheAndreusPR"></span><h3>TheAndreusPR</h3><span class="tag hi">Admin</span>
+<p>Admin de TEAM LMC y creador de contenido.</p>
+<span class="go"><i class="fa-solid fa-play"></i>Kick</span></a>
+<a class="mc rv" style="--d:0.05s" href="https://kick.com/Spritii" target="_blank" rel="noopener">
+<span class="av"><img src="assets/avatars/spritii.png" alt="Spritii"></span><h3>Spritii</h3><span class="tag">Creador de contenido</span>
+<p>Streamer y creador de contenido dentro de TEAM LMC.</p>
+<span class="go"><i class="fa-solid fa-play"></i>Kick</span></a>
+<a class="mc rv" style="--d:0.1s" href="https://www.youtube.com/@OshaX64" target="_blank" rel="noopener">
+<span class="av"><img src="assets/avatars/osha.png" alt="Oshawott0M"></span><h3>Oshawott0M</h3><span class="tag">Jugador casual</span>
+<p>Jugador casual y miembro oficial de TEAM LMC.</p>
+<span class="go"><i class="fab fa-youtube"></i>YouTube</span></a>
+<a class="mc rv" href="https://kick.com/daantix" target="_blank" rel="noopener">
 <span class="av"><img src="assets/avatars/dan.png" alt="yDaantix"></span><h3>yDaantix</h3><span class="tag">Creador de contenido</span>
 <p>Creador de contenido y miembro oficial de TEAM LMC.</p>
 <span class="go"><i class="fa-solid fa-play"></i>Kick</span></a>
-<a class="mc rv" style="--d:.1s" href="https://www.twitch.tv/tronx_346" target="_blank" rel="noopener">
+<a class="mc rv" style="--d:0.05s" href="https://www.twitch.tv/tronx_346" target="_blank" rel="noopener">
 <span class="av"><img src="assets/avatars/tronx.png" alt="Tronx346"></span><h3>Tronx346</h3><span class="tag">Creador de contenido</span>
 <p>Creador de contenido y miembro oficial de TEAM LMC.</p>
 <span class="go"><i class="fab fa-twitch"></i>Twitch</span></a>
@@ -1013,16 +1020,22 @@ $('#ckOk').onclick=()=>{try{localStorage.setItem(KEY,'1')}catch(e){}ck.classList
 $$('[data-open="ck-set"]').forEach(b=>b.onclick=()=>ck.classList.add('on'))}
 
 /* Videos: solo se muestran los publicos (YouTube oEmbed rechaza privados y eliminados) */
+/* Fechas de publicacion (AAAA-MM-DD). Los videos se ordenan del mas nuevo al mas viejo; los que no tengan fecha van al final en su orden actual. */
+const VDATE={
+/* 'ID_DEL_VIDEO':'2026-11-20', */
+};
+const vsort=(arr,get)=>arr.map((x,i)=>[x,i]).sort((a,b)=>{const da=VDATE[get(a[0])]||'',db=VDATE[get(b[0])]||'';
+if(da&&db)return da<db?1:da>db?-1:a[1]-b[1];if(da)return-1;if(db)return 1;return a[1]-b[1]}).map(x=>x[0]);
 const vg=$('#vgrid');
 if(vg){
-const sg=$('#sgrid'),sids=['jEBvrShQpSI','nMFB6raGp88','9hJJOw5A2Jc','P48WBJ_NKto','SjP2DJrgfmg','daWVRtmsmTc','kEF9swp9Dqw','k6MtEjmN5zo'];
+const sg=$('#sgrid'),sids=vsort(['jEBvrShQpSI','nMFB6raGp88','9hJJOw5A2Jc','P48WBJ_NKto','SjP2DJrgfmg','daWVRtmsmTc','kEF9swp9Dqw','k6MtEjmN5zo'],x=>x);
 sids.forEach(id=>{const d=document.createElement('div');d.className='vid short rv in';
 d.innerHTML='<iframe loading="lazy" title="Short de Team LMC" src="https://www.youtube-nocookie.com/embed/'+id+'" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>';sg.appendChild(d)});
-const ids=['pT9YYfUp8SQ','_JusN39_3Ys','FCIssvwC7Kk','FQqg_FZPP4Q','ehaIvwu6S5o','5RAgk4ogXac','dLiJ-WuzYCE','_pyVtVpSe_I','fnF8nFIpHXc','IYc0dABhKEM'];
+const ids=vsort(['pT9YYfUp8SQ','_JusN39_3Ys','FCIssvwC7Kk','FQqg_FZPP4Q','ehaIvwu6S5o','5RAgk4ogXac','dLiJ-WuzYCE','_pyVtVpSe_I','fnF8nFIpHXc','IYc0dABhKEM'],x=>x);
 let n=0;
 Promise.allSettled(ids.map(id=>fetch('https://www.youtube.com/oembed?format=json&url='+encodeURIComponent('https://www.youtube.com/watch?v='+id)).then(r=>{if(!r.ok)throw 0;n++;
 const d=document.createElement('div');d.className='vid rv in';
-d.innerHTML='<iframe loading="lazy" title="Video de Team LMC" src="https://www.youtube-nocookie.com/embed/'+id+'" allowfullscreen></iframe>';vg.appendChild(d)}))).then(()=>{if(!n)$('#vempty').hidden=false})}
+d.innerHTML='<iframe loading="lazy" title="Video de Team LMC" src="https://www.youtube-nocookie.com/embed/'+id+'" allowfullscreen></iframe>';return d}))).then(rs=>{rs.forEach(x=>{if(x.status==='fulfilled'&&x.value)vg.appendChild(x.value)});if(!n)$('#vempty').hidden=false})}
 
 
 /* Panel de videos del inicio (pestañas con preview) */
@@ -1034,15 +1047,20 @@ const list=[
 {id:'9hJJOw5A2Jc',short:1,t:'Short de un miembro de Team LMC'},{id:'P48WBJ_NKto',short:1,t:'Short de un miembro de Team LMC'},{id:'SjP2DJrgfmg',short:1,t:'Short de un miembro de Team LMC'},{id:'daWVRtmsmTc',short:1,t:'Short de un miembro de Team LMC'},{id:'kEF9swp9Dqw',short:1,t:'Short de un miembro de Team LMC'},{id:'k6MtEjmN5zo',short:1,t:'Short de un miembro de Team LMC'},
 {id:'pT9YYfUp8SQ'},{id:'_JusN39_3Ys'},{id:'FCIssvwC7Kk'},{id:'FQqg_FZPP4Q'},{id:'ehaIvwu6S5o'},
 {id:'5RAgk4ogXac'},{id:'dLiJ-WuzYCE'},{id:'_pyVtVpSe_I'},{id:'fnF8nFIpHXc'},{id:'IYc0dABhKEM'}];
+list.splice(0,list.length,...vsort(list,v=>v.id));
 const tabs=$('#vpTabs'),box=$('#vpBox'),bg=$('#vpBg'),cap=$('#vpCap'),stage=$('#vpStage');
 const th=id=>'https://i.ytimg.com/vi/'+id+'/hqdefault.jpg';
-const items=[];let cur=null;
-function show(v,play){
+const items=[];let cur=null,ready=false,pend=null;
+/* video aleatorio al entrar; si viene del click de la pantalla de entrada se reproduce (sin sonido para no pisar la musica) */
+function pick(play){if(!items.length)return;const v=items[Math.floor(Math.random()*items.length)];show(v,play,true);pend=null;
+if(v.b)tabs.scrollLeft=Math.max(0,v.b.offsetLeft-tabs.clientWidth/2+v.b.offsetWidth/2)}
+addEventListener('introclick',()=>{if(ready)pick(true);else pend=true});
+function show(v,play,mute){
 cur=v;stage.classList.toggle('wide',!v.short);
 bg.style.backgroundImage='url('+th(v.id)+')';
 cap.textContent=v.t||'Video de Team LMC';
 items.forEach(x=>x.b.setAttribute('aria-selected',x===v?'true':'false'));
-if(play){box.innerHTML='<iframe title="'+(v.t||'Video de Team LMC').replace(/"/g,'')+'" src="https://www.youtube-nocookie.com/embed/'+v.id+'?autoplay=1&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';box.style.cursor='default';box.onclick=null}
+if(play){box.innerHTML='<iframe title="'+(v.t||'Video de Team LMC').replace(/"/g,'')+'" src="https://www.youtube-nocookie.com/embed/'+v.id+'?autoplay=1'+(mute?'&mute=1':'')+'&rel=0&playsinline=1" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';box.style.cursor='default';box.onclick=null}
 else{box.innerHTML='<img src="'+th(v.id)+'" alt=""><span class="vp-play"><i class="fa-solid fa-play"></i></span>';box.style.cursor='pointer';box.onclick=()=>show(v,true)}}
 function add(v){
 const b=document.createElement('button');b.type='button';b.className='vp-tab'+(v.short?'':' wide');b.setAttribute('role','tab');b.setAttribute('aria-selected','false');
@@ -1051,7 +1069,7 @@ b.innerHTML='<img loading="lazy" src="'+th(v.id)+'" alt="">'+(v.short?'<b>SHORT<
 v.b=b;b.onclick=()=>show(v,false);tabs.appendChild(b);items.push(v);if(items.length===1)show(v,false)}
 /* Los shorts se agregan siempre; los demás solo si siguen públicos (oEmbed) */
 Promise.all(list.map(v=>v.short?Promise.resolve(v):fetch('https://www.youtube.com/oembed?format=json&url='+encodeURIComponent('https://www.youtube.com/watch?v='+v.id)).then(r=>{if(!r.ok)throw 0;return r.json()}).then(d=>{v.t=d.title;return v}).catch(()=>null)))
-.then(r=>{r.filter(Boolean).forEach(add);if(!items.length)vp.hidden=true})
+.then(r=>{r.filter(Boolean).forEach(add);if(!items.length){vp.hidden=true;return}ready=true;if(pend!==null)pick(pend);else if(!$('#intro'))pick(false)})
 /* Títulos de los shorts */
 list.filter(v=>v.short).forEach(v=>fetch('https://www.youtube.com/oembed?format=json&url='+encodeURIComponent('https://www.youtube.com/shorts/'+v.id)).then(r=>r.ok?r.json():0).then(d=>{if(d&&d.title){v.t=d.title;v.b&&v.b.setAttribute('aria-label',d.title);if(cur===v)cap.textContent=d.title}}).catch(()=>{}))
 })();
